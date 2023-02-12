@@ -33,8 +33,8 @@ function hero() {
         <Image
           src={HomeImage}
           alt='Hero Banner Image'
-          height={'full'}
-          width={'full'}
+          height={'auto'}
+          width={'auto'}
           className='object-cover m-10'
         />
       </div>

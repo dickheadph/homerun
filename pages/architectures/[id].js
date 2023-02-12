@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-//import tours from '../../data/tours.json';
-import getData from '@/Library/getData';
+import tours from '../../data/tours.json';
+//import getData from '@/Library/getData';
 
 export async function getStaticProps({ params }) {
   //const params = staticRoute.params;
 
-  const data = await getData();
+  //const data = await getData();
   // const response = await fetch('http://localhost:3000/api/hello');
   // const data = await response.json();
   return {
     props: {
-      tours: data.find((tour) => {
+      tours: tours.find((tour) => {
         return tour.id.toString() === params.id;
       }),
     },
@@ -19,8 +19,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = await getData();
-  const paths = data.map((tour) => {
+  //const data = await getData();
+  const paths = tours.map((tour) => {
     //console.log(paths);
     return {
       params: {

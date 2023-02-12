@@ -1,15 +1,15 @@
 import React from 'react';
 import Card from '@/components/card';
 import Link from 'next/link';
-import getData from '@/Library/getData';
-//import tours from '../../data/tours.json';
+//import getData from '@/Library/getData';
+import tours from '../../data/tours.json';
 
 export async function getStaticProps(context) {
   //const data = await axios.get('url');
-  const data = await getData();
+  //const data = await getData();
   return {
     props: {
-      tours: data,
+      tours,
     },
   };
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import Card from '@/components/card';
-//import tours from '../../data/tours.json';
-import getData from '@/Library/getData';
+import tours from '../../data/tours.json';
+//import getData from '@/Library/getData';
 export async function getStaticProps(context) {
-  const data = await getData();
+  //const data = await getData();
   return {
     props: {
-      tours: data,
+      tours,
     },
   };
 }

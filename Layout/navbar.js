@@ -15,7 +15,7 @@ function Navbar() {
     }
   };
   return (
-    <div className='flex justify-between p-6 font-semibold text-lg items-center bg-gradient-to-r from-stone-500/10 to-amber-50'>
+    <div className='flex justify-between p-6 font-semibold text-lg items-center lg:bg-gradient-to-r from-stone-500/10 to-amber-50 bg-stone-500/10'>
       <div>
         {/* image here */}
         <Logo />
