@@ -15,16 +15,13 @@ function Navbar() {
     }
   };
   return (
-    <div className='flex justify-between p-6 font-semibold text-lg items-center'>
+    <div className='flex justify-between p-6 font-semibold text-lg items-center bg-gradient-to-r from-stone-500/10 to-amber-50'>
       <div>
         {/* image here */}
         <Logo />
       </div>
       <div className='lg:block hidden'>
-        <ul className='flex space-x-3'>
-          <Link href={'/'}>
-            <li>Home</li>
-          </Link>
+        <ul className='flex space-x-3 mr-10'>
           <Link href={'/listings'}>
             <li>Listings</li>
           </Link>
@@ -36,6 +33,9 @@ function Navbar() {
           </Link>
           <Link href={'/about'}>
             <li>About</li>
+          </Link>
+          <Link href={'/register'}>
+            <button>Register</button>
           </Link>
         </ul>
       </div>

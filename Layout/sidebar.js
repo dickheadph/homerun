@@ -7,9 +7,9 @@ const Sidebar = () => {
   //     setShowSidebar((prevState) => !prevState);
   //   };
   return (
-    <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pr-[0%]'>
-      <h1>X</h1>
-      <ul className='z-20 absolute'>
+    <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pl-[60%]'>
+      <h1 className='font-bold absolute top-[5%] right-9 z-20'>X</h1>
+      <ul className='bg-amber-50 h-screen pt-[60%] px-4'>
         <Link href={'/'}>
           <li>Home</li>
         </Link>
@@ -24,6 +24,11 @@ const Sidebar = () => {
         </Link>
         <Link href={'/about'}>
           <li>About</li>
+        </Link>
+        <Link href={'/register'}>
+          <button className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'>
+            Register
+          </button>
         </Link>
       </ul>
     </div>
