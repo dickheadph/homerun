@@ -7,9 +7,9 @@ const Sidebar = () => {
   //     setShowSidebar((prevState) => !prevState);
   //   };
   return (
-    <div className=''>
+    <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pr-[0%]'>
       <h1>X</h1>
-      <ul className=''>
+      <ul className='z-20 absolute'>
         <Link href={'/'}>
           <li>Home</li>
         </Link>

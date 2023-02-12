@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Logo from '@/components/logo';
+import Logo from '@/Layout/logo';
 import Sidebar from './sidebar';
+import { BiMenu } from 'react-icons/bi';
 function Navbar() {
   const [showSidebar, setShowSidebar] = useState(true);
   const sidebarHandler = (e) => {
     e.preventDefault();
     setShowSidebar((prevState) => !prevState);
+    if (showSidebar) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
   };
   return (
-    <div className='flex justify-between p-6 font-semibold text-lg'>
+    <div className='flex justify-between p-6 font-semibold text-lg items-center'>
       <div>
         {/* image here */}
         <Logo />
@@ -34,11 +40,11 @@ function Navbar() {
         </ul>
       </div>
       {showSidebar ? (
-        <p onClick={sidebarHandler} className='lg:hidden'>
-          Y
-        </p>
-      ) : (
         <div onClick={sidebarHandler} className='lg:hidden'>
+          <BiMenu size={30} />
+        </div>
+      ) : (
+        <div onClick={sidebarHandler}>
           <Sidebar />
         </div>
       )}
