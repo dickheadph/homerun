@@ -25,7 +25,6 @@ export default function Home() {
           content='Never worry about your future home. We at Homerun got your back. We can provide you with the most modern House Architecture from Design, materilas p[laaning and the actual construction of your home.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={''}>
         <Navbar />
