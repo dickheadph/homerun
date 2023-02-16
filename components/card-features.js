@@ -5,7 +5,7 @@ const CardFeatures = (props) => {
   return (
     <>
       <motion.div
-        className='border-[1px] rounded-lg p-3 m-3 bg-amber-50/40 border-orange-200 text-zinc-800'
+        className='border-[1px] rounded-lg p-3 m-3 bg-amber-50/40 border-orange-200 text-zinc-800 shadow-lg'
         whileHover={{
           scale: 1.05 ,
         }}>
