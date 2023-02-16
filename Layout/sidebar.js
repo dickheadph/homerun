@@ -1,5 +1,6 @@
 //import { useState } from 'react';
 import Link from 'next/link';
+import { FaList, FaCircle } from 'react-icons/fa';
 const Sidebar = () => {
   //   const [showSidebar, setShowSidebar] = useState(false);
   //   const sidebarHandler = (e) => {
@@ -11,7 +12,7 @@ const Sidebar = () => {
       <h1 className='font-bold absolute top-[5%] right-9 z-20'>X</h1>
       <ul className='bg-amber-50 h-screen pt-[60%] px-4'>
         <Link href={'/'}>
-          <li>Home</li>
+          <li className='flex items-center'>< FaCircle/>Home</li>
         </Link>
         <Link href={'/listings'}>
           <li>Listings</li>

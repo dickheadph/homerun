@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../public/assets/logo-text.png';
+import Logo from '../public/assets/logo.png';
 const logo = () => {
   return (
     <div>
@@ -8,9 +8,9 @@ const logo = () => {
         <Image
           src={Logo}
           alt='Company Logo'
-          width={60}
-          height={60}
-          className='rounded-full'
+          width={50}
+          height={50}
+          className='rounded-full mix-blend-hard-light'
         />
       </Link>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import Head from 'next/head';
 import Card from '@/components/card';
 import Link from 'next/link';
 //import getData from '@/Library/getData';
@@ -17,6 +17,9 @@ function Designs(props) {
   //console.log(props.tours);
   return (
     <div>
+      <Head>
+        <title>Homerun: Architectures</title>
+      </Head>
       <h1>Heres your tours</h1>
       {props.tours.map((tour) => {
         return (

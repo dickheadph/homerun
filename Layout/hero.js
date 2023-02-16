@@ -29,13 +29,14 @@ function hero() {
           </Link>
         </div>
       </div>
-      <div className='lg:w-7/12 w-full lg:block hidden bg-amber-50'>
+      <div className='lg:w-7/12 bg-amber-50'>
         <Image
           src={HomeImage}
+          priority={true}
           alt='Hero Banner Image'
           height={'auto'}
           width={'auto'}
-          className='object-cover m-10'
+          className='object-cover my-[5%]'
         />
       </div>
     </div>

@@ -1,8 +1,9 @@
 // import mongoose from 'mongoose';
 // //const mongoose = require('')
-// const db = process.env.DB_URI;
+// const db = process.env.ATLAS_URI;
 // const connectDB = async () => {
-//   await mongoose
+//   mongoose.set('strictQuery', true);
+//   return await mongoose
 //     .connect(db)
 //     .then(() => {
 //       console.log('Connected to M_DB-ATLAS');
@@ -12,4 +13,4 @@
 //     });
 // };
 
-// connectDB();
+// export default connectDB;

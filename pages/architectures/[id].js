@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Link from 'next/link';
 import tours from '../../data/tours.json';
 //import getData from '@/Library/getData';
@@ -41,6 +42,9 @@ function Architectures(props) {
     <div>Loading...</div>
   ) : (
     <div>
+      <Head>
+        <title>Architecture: {props.tours.name}</title>
+      </Head>
       <Link href={'/architectures'}>
         <button className='py-2 px-3 bg-yellow-200/60 border-[1px] rounded-md'>
           Go back
