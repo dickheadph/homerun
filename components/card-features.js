@@ -9,10 +9,10 @@ const CardFeatures = (props) => {
           alt={'Image'}
           width={500}
           height={10}
-          className='h-[280px] object-cover rounded-md'
+          className='h-[200px] lg:h-[260px] object-cover rounded-md'
           priority={true}
         />
-        <div className='m-3'>
+        <div className='my-3'>
           <h1 className='text-lg font-semibold'>{name}</h1>
           <p className='indent-8 text-justify'>{desc}</p>
         </div>

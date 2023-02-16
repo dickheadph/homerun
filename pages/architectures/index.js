@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Card from '@/components/card';
 import Link from 'next/link';
 //import getData from '@/Library/getData';
 import tours from '../../data/tours.json';
@@ -24,7 +23,7 @@ function Designs(props) {
       {props.tours.map((tour) => {
         return (
           <Link key={tour.id} href={{ pathname: `/architectures/${tour.id}` }}>
-            <Card name={tour.name} />
+            <h1>{tour.name}</h1>
           </Link>
         );
       })}

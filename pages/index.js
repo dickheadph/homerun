@@ -5,7 +5,7 @@ import Hero from '@/Layout/hero';
 import Features from '@/components/features';
 import BannerContainer from '@/components/banner-container';
 import Footer from '@/Layout/footer';
-import Feedbacks from '@/components/feedbacks';
+import Feedbacks from '@/components/testimonials';
 export default function Home() {
   return (
     <>

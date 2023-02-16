@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '@/components/card';
+import Card from '@/components/card-banner';
 import tours from '../../data/tours.json';
 //import getData from '@/Library/getData';
 export async function getStaticProps(context) {
