@@ -1,4 +1,3 @@
-import { FaTools } from 'react-icons/fa';
 import CardFeatures from './card-features';
 import Architecture from '../public/assets/Architecture.webp';
 import Outline from './Shared/Outline';
@@ -11,7 +10,7 @@ const Features = () => {
         {/* planning, design, construction */}
         <Title title={'Services We Offer'} />
         <ul className='flex justify-evenly lg:flex-nowrap flex-wrap'>
-          <li>
+          <li className='p-6'>
             <CardFeatures
               name='Planning'
               image={
@@ -20,10 +19,6 @@ const Features = () => {
               desc='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
             />
           </li>
-          {/* <div className='border-[1px] rounded-lg p-3 m-3'>
-        <h1 className='text-center'>Architecture</h1>
-        <p>We provide modern design suited to your taste.</p>
-      </div> */}
           <li>
             <CardFeatures
               name='Architecture'
@@ -31,7 +26,7 @@ const Features = () => {
               desc='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
             />
           </li>
-          <li>
+          <li className='p-6'>
             <CardFeatures
               name='Construction'
               image={

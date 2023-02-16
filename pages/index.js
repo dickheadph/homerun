@@ -8,11 +8,9 @@ import BannerContainer from '@/components/banner-container';
 import Footer from '@/Layout/footer';
 import Feedbacks from '@/components/testimonials';
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    setLoading(false);
   }, []);
   return loading ? (
     <div className='text-green-600'>Loading</div>
