@@ -7,7 +7,7 @@ const BannerContainer = () => {
     <div className='bg-amber-50'>
       <Outline>
         <Title title={'Portfolio Projects'} />
-        <ul className='flex overflow-auto lg:justify-evenly'>
+        <ul className='flex overflow-auto space-x-2 lg:justify-evenly'>
           <li>
             <CardBanner
               name='#Planning'
@@ -17,7 +17,7 @@ const BannerContainer = () => {
               image='https://images.unsplash.com/photo-1603901622056-0a5bee231395?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJhZnRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
             />
           </li>
-          <li>
+          {/* <li>
             <CardBanner
               name='#Architecture'
               paragraph='
@@ -34,7 +34,7 @@ const BannerContainer = () => {
               cillum dolore eu fugiat nulla pariatur.'
               image='https://images.unsplash.com/photo-1593786267440-550458cc882a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG91c2UlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
             />
-          </li>
+          </li> */}
           <li className='lg:hidden'>
             <ul className='mx-3'>
               <li className='relative'>

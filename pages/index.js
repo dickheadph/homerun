@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 // import styles from '@/styles/Home.module.css';
 import Navbar from '@/Layout/navbar';
@@ -7,7 +8,15 @@ import BannerContainer from '@/components/banner-container';
 import Footer from '@/Layout/footer';
 import Feedbacks from '@/components/testimonials';
 export default function Home() {
-  return (
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+  return loading ? (
+    <div className='text-green-600'>Loading</div>
+  ) : (
     <>
       <Head>
         <title>Homerun: Construction and Architecture</title>
