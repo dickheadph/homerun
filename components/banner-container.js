@@ -19,12 +19,12 @@ const BannerContainer = () => {
         <Title title={'Portfolio Projects'} />
         <Swiper
           slidesPerView={'auto'}
-          spaceBetween={30}
+          spaceBetween={10}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-          className='mySwiper'>
+          className=''>
           <SwiperSlide>
             <CardBanner
               name='#Planning'
