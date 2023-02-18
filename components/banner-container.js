@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
 const BannerContainer = () => {
   return (
-    <div className='bg-amber-50'>
+    <div className='bg-amber-50 lg:hidden'>
       <Outline>
         <Title title={'Portfolio Projects'} />
         <Swiper
