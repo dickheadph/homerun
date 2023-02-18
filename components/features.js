@@ -10,7 +10,7 @@ const Features = () => {
         {/* planning, design, construction */}
         <Title title={'Services We Offer'} />
         <ul className='flex justify-evenly lg:flex-nowrap flex-wrap'>
-          <li className='p-6'>
+          <li className='lg:p-6'>
             <CardFeatures
               name='Planning'
               image={
@@ -26,7 +26,7 @@ const Features = () => {
               desc='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
             />
           </li>
-          <li className='p-6'>
+          <li className='lg:p-6'>
             <CardFeatures
               name='Construction'
               image={

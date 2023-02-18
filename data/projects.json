@@ -1,9 +1,65 @@
 [
   {
     "name": "Rest House Bungalow",
+    "type": "bungalow",
     "category": "architecture",
     "image": "https://images.unsplash.com/photo-1632276087959-6e8e3f4e3e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGJ1bmdhbG93JTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "author": "Homerun Inc."
   },
-  {}
+  {
+    "name": "2 Storey Rest House",
+    "type": "2 storey",
+    "category": "architecture",
+    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8MiUyMHN0b3JleSUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Enterprise Bldg.",
+    "type": "building",
+    "category": "architecture",
+    "image": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fGVudGVycHJpc2UlMjBidWlsZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Interior Design",
+    "type": "intirior",
+    "category": "planning",
+    "image": "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aW50ZWlvciUyMGRlc2lnbiUyMHBsYW5uaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Electrical Plan",
+    "type": "electrical",
+    "category": "planning",
+    "image": "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGVsZWN0cmljYWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Plumbing Plan",
+    "type": "plumbing",
+    "category": "planning",
+    "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGx1bWJpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "First Structure",
+    "type": "construction",
+    "category": "bulding",
+    "image": "https://images.unsplash.com/photo-1621511075938-f03482369feb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YnVpbGRpbmclMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Second Structure",
+    "type": "construction",
+    "category": "bulding",
+    "image": "https://plus.unsplash.com/premium_photo-1671169262743-75b5ee075336?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fGJ1aWxkaW5nJTIwY29uc3RydWN0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  },
+  {
+    "name": "Third Structure",
+    "type": "construction",
+    "category": "bulding",
+    "image": "https://images.unsplash.com/photo-1641698680673-edab78703c0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTU5fHxidWlsZGluZyUyMGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "author": "Homerun Inc."
+  }
 ]
