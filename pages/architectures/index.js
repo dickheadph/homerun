@@ -3,15 +3,11 @@
 // import getAll from '../api/hello';
 import Head from 'next/head';
 import Link from 'next/link';
-<<<<<<< HEAD
 import Image from 'next/image';
 const API = process.env.API_ENDPOINT;
+
 export async function getStaticProps(context) {
   const response = await fetch(`${API}/projects`);
-=======
-export async function getStaticProps(context) {
-  const response = await fetch('http://localhost:3000/api/hello');
->>>>>>> adcc07f0d18946d2bb3f4f9175d73a761f2bf2f4
   const data = await response.json();
   console.log(data);
   return {
@@ -20,6 +16,7 @@ export async function getStaticProps(context) {
     },
   };
 }
+
 function Designs(props) {
   //console.log(props.tours);
   return (
