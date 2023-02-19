@@ -8,7 +8,7 @@ const API = process.env.API_ENDPOINT;
 export async function getStaticProps({ params }) {
   //const params = staticRoute.params;
 
-  const response = await fetch(`${API}/projects`); 
+  const response = await fetch(`${API}/projects`);
   const data = await response.json();
   //console.log(data);
   return {
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
 function Architectures(props) {
   const router = useRouter();
- console.log(props.project);
+  //console.log(props.project);
 
   return router.isFallback ? (
     <div>Loading...</div>
@@ -54,8 +54,8 @@ function Architectures(props) {
           Go back
         </button>
       </Link>
-        <h1>{props.project.name}</h1>
-        <p>Auhtored by: { props.project.author}</p>
+      <h1>{props.project.name}</h1>
+      <p>Auhtored by: {props.project.author}</p>
       <Image
         src={props.project.image}
         alt={props.project.name}
