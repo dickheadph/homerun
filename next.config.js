@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['realestate-gold.vercel.app', 'images.unsplash.com'],
+    domains: ['realestate-gold.vercel.app', 'images.unsplash.com', 'plus.unsplash.com'],
   },
 }
 
