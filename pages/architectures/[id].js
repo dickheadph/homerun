@@ -8,9 +8,9 @@ const API = process.env.API_ENDPOINT;
 export async function getStaticProps({ params }) {
   //const params = staticRoute.params;
 
-  const response = await fetch(`${API}/projects`);
+  const response = await fetch(`${API}/homerun/projects`);
   const data = await response.json();
-  //console.log(data);
+  console.log(data);
   return {
     props: {
       project: data.find((tour) => {
@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${API}/projects`);
+  const response = await fetch(`${API}/homerun/projects`);
   const data = await response.json();
   //const data = await getData();
   const paths = data.map((tour) => {

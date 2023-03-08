@@ -7,18 +7,18 @@ import Image from 'next/image';
 const API = process.env.API_ENDPOINT;
 
 export async function getStaticProps(context) {
-  const response = await fetch(`${API}/projects`);
+  const response = await fetch(`${API}/homerun/projects`);
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
   return {
     props: {
-      tours: data,
+      projects: data,
     },
   };
 }
 
 function Designs(props) {
-  //console.log(props.tours);
+  //console.log(props.projects);
   return (
     <div>
       <Head>
@@ -26,19 +26,21 @@ function Designs(props) {
       </Head>
       <h1>Heres your tours</h1>
       <div className='flex flex-wrap'>
-        {props.tours.map((tour) => {
+        {props.projects.map((project) => {
           return (
             <Link
-              key={tour.id}
-              href={{ pathname: `/architectures/${tour.id}` }}>
+              href={{ pathname: `/architectures/${project.id}` }}
+              key={project.id}>
               <div className=''>
-                <h1>{tour.name}</h1>
-                <Image
-                  src={tour.image}
-                  alt={tour.name}
-                  height={500}
-                  width={500}
-                />
+                <h1>{project.name}</h1>
+                {project.image && (
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={500}
+                    height={500}
+                  />
+                )}
               </div>
             </Link>
           );

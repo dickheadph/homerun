@@ -34,7 +34,7 @@ function Navbar() {
           <Link href={'/about'}>
             <li>About</li>
           </Link>
-          <Link href={'/register'}>
+          <Link href={'/auth'}>
             <button>Register</button>
           </Link>
         </ul>
