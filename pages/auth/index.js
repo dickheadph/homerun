@@ -60,7 +60,7 @@ const Login = () => {
         } else {
           url = 'https://home-run.onrender.com/homerun/users/log-in';
         }
-        //console.log(fields);
+        //console.log({ email, password });
         await axios
           .post(
             url,
@@ -86,7 +86,7 @@ const Login = () => {
             }
           })
           .catch((err) => {
-            console.log('Error logging in.' + err);
+            console.log('Error logging in. ' + err);
             setLoading(false);
           });
       } catch (error) {
