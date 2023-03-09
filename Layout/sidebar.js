@@ -8,7 +8,8 @@ const Sidebar = () => {
   const router = useRouter();
   const id = localStorage.getItem('id');
   const token = localStorage.getItem('jwt');
-  const [hasAcc, setHasAcc] = useState([]);
+  const [profile, setProfile] = useState([]);
+  const [hasAcc, setHasAcc] = useState(false);
 
   const isAuthenticated = async () => {
     await axios
@@ -18,16 +19,17 @@ const Sidebar = () => {
         },
       })
       .then((res) => {
-        const account = res.data.profile;
-        if (account) {
-          setHasAcc(account);
+        console.log(res);
+        if (res.status === 'success') {
+          setHasAcc(true);
+          setProfile(res.data.profile);
         } else {
-          setHasAcc('');
+          setHasAcc(false);
         }
+        //const account = res.data.profile;
       })
       .catch((err) => {
         console.log(err);
-        setHasAcc('');
       });
   };
   useEffect(() => {
@@ -59,7 +61,7 @@ const Sidebar = () => {
         {hasAcc ? (
           <div>
             <Image
-              src={hasAcc.image}
+              src={profile.image}
               alt={'User Profile'}
               height={500}
               width={500}
@@ -67,7 +69,7 @@ const Sidebar = () => {
                 router.push('/profile');
               }}
             />
-            <h1 className='overflow-hidden'>{hasAcc.name}</h1>
+            <h1 className='overflow-hidden'>{profile.name}</h1>
             <Link href={'/auth'}>
               <button className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'>
                 Log Out
