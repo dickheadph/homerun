@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 //const API = process.env.API_ENDPOINT;
-import Logo from '@/Layout/logo';
+import Logo from '../../public/assets/logo-text.png';
+import Image from 'next/image';
 const Login = () => {
   const router = useRouter();
   const [hasAcc, setHassAcc] = useState(false);
@@ -84,6 +85,10 @@ const Login = () => {
               router.push('/');
               localStorage.setItem('jwt', res.data.token);
               localStorage.setItem('id', res.data.newUser.id);
+            } else {
+              router.push('/auth');
+              localStorage.removeItem('jwt');
+              localStorage.removeItem('id');
             }
           })
           .catch((err) => {
@@ -101,15 +106,24 @@ const Login = () => {
   ) : (
     <div className=' bg-amber-50/50'>
       <div className='flex h-screen justify-center items-start lg:mx-[36%] mx-[6%]'>
-        <div className='border-[1px] p-5 rounded-md shadow-lg mt-40 bg-amber-50 w-full'>
+        <div className='border-[1px] p-5 rounded-md shadow-lg lg:mt-40 mt-[20%] bg-amber-100/60 w-full'>
           <div
-            className='flex justify-center'
+            className='flex justify-center items-center'
             onClick={() => {
               router.push('/');
             }}>
-            <Logo />
+            <Image
+              src={Logo}
+              alt='Logo'
+              height={80}
+              width={80}
+              className='rounded-full'
+            />
           </div>
-          <h1 className='text-center'>{!hasAcc ? 'Log in' : 'Sign Up'}</h1>
+          <button className='w-full border-[1px] rounded-md py-2 px-3 my-2 bg-white'>
+            Google
+          </button>
+          <h1 className='text-center my-2'>{!hasAcc ? 'Log in' : 'Sign Up'}</h1>
           <form onSubmit={submitHandler} className=''>
             {hasAcc && (
               <label>
@@ -175,7 +189,7 @@ const Login = () => {
               </div>
             )}
             <button
-              className='py-2 px-3 border-[1px] rounded-md w-full my-2'
+              className='py-2 px-3 border-[1px] rounded-md w-full my-2 bg-orange-400/90 text-white'
               onClick={submitHandler}>
               Submit
             </button>
