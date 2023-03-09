@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   const isAuthenticated = async () => {
     await axios
-      .get(`http://localhost:3001/homerun/profile/${id}`, {
+      .get(`https://home-run.onrender.com/homerun/profile/${id}`, {
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
