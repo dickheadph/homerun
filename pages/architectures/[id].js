@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const API = process.env.PROD_ENDPOINT;
+const API = process.env.API_ENDPOINT;
 
 export async function getStaticProps({ params }) {
   //const params = staticRoute.params;

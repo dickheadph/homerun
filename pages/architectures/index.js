@@ -4,7 +4,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-const API = process.env.PROD_ENDPOINT;
+const API = process.env.API_ENDPOINT;
 
 export async function getStaticProps(context) {
   const response = await fetch(`${API}/homerun/projects`);
