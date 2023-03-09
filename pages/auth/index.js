@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 //const API = process.env.API_ENDPOINT;
+import Logo from '@/Layout/logo';
 const Login = () => {
   const router = useRouter();
   const [hasAcc, setHassAcc] = useState(false);
@@ -98,78 +99,92 @@ const Login = () => {
   return loading ? (
     <h1>Loading</h1>
   ) : (
-    <div className='items-center'>
-      <h1>{!hasAcc ? 'Log in' : 'Sign Up'}</h1>
-      <form onSubmit={submitHandler}>
-        {hasAcc && (
-          <label>
-            Name
-            <br />
-            <input
-              type='text'
-              id='name'
-              value={name}
-              onChange={onMutate}
-              required
-            />
-            <br />
-          </label>
-        )}
-        <label>Email</label>
-        <br />
-        <input
-          type='email'
-          id='email'
-          value={email}
-          onChange={onMutate}
-          required
-        />
-        <br />
-        <label>Password</label>
-        <br />
-        <input
-          type='password'
-          id='password'
-          value={password}
-          onChange={onMutate}
-          required
-        />
-        <br />
-        {hasAcc && (
-          <div>
-            <label>Re-type Password</label>
-            <br />
-            <input
-              type='password'
-              id='confirmPassword'
-              value={confirmPassword}
-              onChange={onMutate}
-              required
-            />
-            <br />
-            <label>User Image</label>
-            <br />
-            <input
-              type='file'
-              id='image'
-              accept='.png, .jpg, .jpeg'
-              max={1}
-              onChange={onMutate}
-            />
-            <br />
+    <div className=' bg-amber-50/50'>
+      <div className='flex h-screen justify-center items-start lg:mx-[36%] mx-[6%]'>
+        <div className='border-[1px] p-5 rounded-md shadow-lg mt-40 bg-amber-50 w-full'>
+          <div
+            className='flex justify-center'
+            onClick={() => {
+              router.push('/');
+            }}>
+            <Logo />
           </div>
-        )}
-      </form>
-      <button
-        className='py-2 px-3 border-[1px] rounded-md'
-        onClick={submitHandler}>
-        Submit
-      </button>
-      <button
-        className='py-2 px-3 border-[1px] rounded-md'
-        onClick={hasExistingAcc}>
-        Has Account.
-      </button>
+          <h1 className='text-center'>{!hasAcc ? 'Log in' : 'Sign Up'}</h1>
+          <form onSubmit={submitHandler} className=''>
+            {hasAcc && (
+              <label>
+                Name
+                <br />
+                <input
+                  className='py-2 px-3 w-full outline-none border-[1px] rounded-md my-2'
+                  type='text'
+                  id='name'
+                  value={name}
+                  onChange={onMutate}
+                  required
+                />
+                <br />
+              </label>
+            )}
+            <label>Email</label>
+            <br />
+            <input
+              className='py-2 px-3 w-full outline-none border-[1px] rounded-md my-2'
+              type='email'
+              id='email'
+              value={email}
+              onChange={onMutate}
+              required
+            />
+            <br />
+            <label>Password</label>
+            <br />
+            <input
+              className='py-2 px-3 w-full outline-none border-[1px] rounded-md my-2'
+              type='password'
+              id='password'
+              value={password}
+              onChange={onMutate}
+              required
+            />
+            <br />
+            {hasAcc && (
+              <div>
+                <label>Re-type Password</label>
+                <br />
+                <input
+                  className='py-2 px-3 w-full outline-none border-[1px] rounded-md my-2'
+                  type='password'
+                  id='confirmPassword'
+                  value={confirmPassword}
+                  onChange={onMutate}
+                  required
+                />
+                <br />
+                <label>User Image</label>
+                <br />
+                <input
+                  className='my-2'
+                  type='file'
+                  id='image'
+                  accept='.png, .jpg, .jpeg'
+                  max={1}
+                  onChange={onMutate}
+                />
+                <br />
+              </div>
+            )}
+            <button
+              className='py-2 px-3 border-[1px] rounded-md w-full my-2'
+              onClick={submitHandler}>
+              Submit
+            </button>
+          </form>
+          <p className='underline text-right' onClick={hasExistingAcc}>
+            {hasAcc ? 'Has Account.' : 'No Acc'}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

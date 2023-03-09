@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { FaCircle } from 'react-icons/fa';
+import { BiHomeAlt, BiLibrary, BiArch, BiHardHat } from 'react-icons/bi';
+
 const Sidebar = () => {
   const router = useRouter();
   const id = localStorage.getItem('id');
@@ -26,14 +27,12 @@ const Sidebar = () => {
         } else {
           setHasAcc(false);
         }
-        //const account = res.data.profile;
       })
       .catch((err) => {
         console.log(err);
       });
   };
   useEffect(() => {
-    // const token = localStorage.getItem('jwt');
     isAuthenticated();
   }, []);
   return (
@@ -42,21 +41,23 @@ const Sidebar = () => {
       <ul className='bg-amber-50 h-screen pt-[60%] px-4'>
         <Link href={'/'}>
           <li className='flex items-center'>
-            <FaCircle />
-            Home
+            <BiHomeAlt /> &nbsp; Home
           </li>
         </Link>
         <Link href={'/listings'}>
-          <li>Listings</li>
+          <li className='flex items-center'>
+            <BiLibrary /> &nbsp; Listings
+          </li>
         </Link>
         <Link href={'/architectures'}>
-          <li>Architectures</li>
+          <li className='flex items-center'>
+            <BiArch /> &nbsp; Architectures
+          </li>
         </Link>
         <Link href={'/projects'}>
-          <li>Projects</li>
-        </Link>
-        <Link href={'/about'}>
-          <li>About</li>
+          <li className='flex items-center'>
+            <BiHardHat /> &nbsp; Projects
+          </li>
         </Link>
         {hasAcc ? (
           <div>
@@ -78,7 +79,7 @@ const Sidebar = () => {
           </div>
         ) : (
           <Link href={'/auth'}>
-            <button className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'>
+            <button className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400/90 text-white w-full my-2'>
               Register
             </button>
           </Link>
