@@ -21,10 +21,13 @@ const Sidebar = () => {
         const account = res.data.profile;
         if (account) {
           setHasAcc(account);
+        } else {
+          setHasAcc('');
         }
       })
       .catch((err) => {
         console.log(err);
+        setHasAcc('');
       });
   };
   useEffect(() => {
