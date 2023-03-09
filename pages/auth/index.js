@@ -69,7 +69,9 @@ const Login = () => {
               : { email, password },
             {
               headers: {
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': hasAcc
+                  ? 'multipart/form-data'
+                  : 'application/json',
               },
             }
           )
