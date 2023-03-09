@@ -58,7 +58,7 @@ const Login = () => {
           url = 'https://home-run.onrender.com/homerun/users/sign-up';
           //fields = { name, email, password, confirmPassword, image };
         } else {
-          url = 'https://home-run.onrender.com/homerun/homerun/users/log-in';
+          url = 'https://home-run.onrender.com/homerun/users/log-in';
         }
         //console.log(fields);
         await axios
