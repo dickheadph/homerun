@@ -13,28 +13,32 @@ const Sidebar = () => {
   const [hasAcc, setHasAcc] = useState(false);
 
   const isAuthenticated = async () => {
-    await axios
-      .get(`https://home-run.onrender.com/homerun/profile/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          setHasAcc(true);
-          setProfile(res.data.profile);
-        } else {
-          setHasAcc(false);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!id && !token) {
+      setHasAcc(false);
+    } else {
+      await axios
+        .get(`https://home-run.onrender.com/homerun/profile/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+          if (res.status === 200) {
+            setHasAcc(true);
+            setProfile(res.data.profile);
+          } else {
+            setHasAcc(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   useEffect(() => {
     isAuthenticated();
-  }, []);
+  }, [token, id]);
   return (
     <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pl-[60%]'>
       <h1 className='font-bold absolute top-[5%] right-9 z-20'>X</h1>
@@ -71,11 +75,15 @@ const Sidebar = () => {
               }}
             />
             <h1 className='overflow-hidden'>{profile.name}</h1>
-            <Link href={'/auth'}>
-              <button className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'>
-                Log Out
-              </button>
-            </Link>
+            <button
+              className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'
+              onClick={() => {
+                router.push('/auth');
+                localStorage.removeItem('jwt');
+                localStorage.removeItem('id');
+              }}>
+              Log Out
+            </button>
           </div>
         ) : (
           <Link href={'/auth'}>
