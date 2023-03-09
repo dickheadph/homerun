@@ -20,7 +20,7 @@ const Sidebar = () => {
       })
       .then((res) => {
         console.log(res);
-        if (res.status === 'success') {
+        if (res.status === 200) {
           setHasAcc(true);
           setProfile(res.data.profile);
         } else {
