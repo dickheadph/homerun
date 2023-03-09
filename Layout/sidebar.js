@@ -13,9 +13,9 @@ const Sidebar = () => {
   const isAuthenticated = async () => {
     await axios
       .get(`https://home-run.onrender.com/homerun/profile/${id}`, {
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
       .then((res) => {
         const account = res.data.profile;
