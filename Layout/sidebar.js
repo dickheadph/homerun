@@ -9,7 +9,7 @@ const Sidebar = () => {
   const id = localStorage.getItem('id');
   const token = localStorage.getItem('jwt');
   const [hasAcc, setHasAcc] = useState([]);
-  
+
   const isAuthenticated = async () => {
     await axios
       .get(`http://localhost:3001/homerun/profile/${id}`, {

@@ -47,49 +47,49 @@ const Login = () => {
     e.preventDefault();
     //console.log(process.env.API_ENDPOINT);
     setLoading(true);
-    if (hasAcc) {
-      if (password !== confirmPassword) {
-        alert('Password does not macth');
-        setLoading(false);
-      } else {
-        let url;
-        //let fields;
-        try {
-          if (hasAcc) {
-            url = 'http://localhost:3001/homerun/users/sign-up';
-            //fields = { name, email, password, confirmPassword, image };
-          } else {
-            url = 'http://localhost:3001/homerun/users/log-in';
-          }
-          //console.log(fields);
-          await axios
-            .post(
-              url,
-              { name, email, password, confirmPassword, image },
-              {
-                headers: {
-                  'Content-Type': 'multipart/form-data',
-                },
-              }
-            )
-            .then((res) => {
-              setLoading(false);
-              console.log(res);
-              if (res.data.status === 'success') {
-                ///alert('Logged in succesfully');
-                router.push('/');
-                localStorage.setItem('jwt', res.data.token);
-                localStorage.setItem('id', res.data.newUser.id);
-              }
-            })
-            .catch((err) => {
-              console.log('Error logging in.' + err);
-              setLoading(false);
-            });
-        } catch (error) {
-          setLoading(false);
-          console.log('User registration failed' + error);
+    if (hasAcc && password !== confirmPassword) {
+      alert('Password does not macth');
+      setLoading(false);
+    } else {
+      let url;
+      //let fields;
+      try {
+        if (hasAcc) {
+          url = 'https://home-run.onrender.com/homerun/users/sign-up';
+          //fields = { name, email, password, confirmPassword, image };
+        } else {
+          url = 'https://home-run.onrender.com/homerun/homerun/users/log-in';
         }
+        //console.log(fields);
+        await axios
+          .post(
+            url,
+            hasAcc
+              ? { name, email, password, confirmPassword, image }
+              : { email, password },
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            }
+          )
+          .then((res) => {
+            setLoading(false);
+            console.log(res);
+            if (res.data.status === 'success') {
+              ///alert('Logged in succesfully');
+              router.push('/');
+              localStorage.setItem('jwt', res.data.token);
+              localStorage.setItem('id', res.data.newUser.id);
+            }
+          })
+          .catch((err) => {
+            console.log('Error logging in.' + err);
+            setLoading(false);
+          });
+      } catch (error) {
+        setLoading(false);
+        console.log('User registration failed' + error);
       }
     }
   };
