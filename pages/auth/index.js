@@ -83,8 +83,11 @@ const Login = () => {
             if (res.data.status === 'success') {
               ///alert('Logged in succesfully');
               router.push('/');
-              localStorage.setItem('jwt', res.data.token);
-              localStorage.setItem('id', res.data.newUser.id);
+              const data = {
+                token: `${res.data.token}`,
+                id: `${hasAcc ? res.data.newUser.id : res.data.user}`,
+              };
+              localStorage.setItem('credentials', JSON.stringify(data));
             } else {
               router.push('/auth');
               localStorage.removeItem('jwt');

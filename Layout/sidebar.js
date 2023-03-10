@@ -7,19 +7,19 @@ import { BiHomeAlt, BiLibrary, BiArch, BiHardHat } from 'react-icons/bi';
 
 const Sidebar = () => {
   const router = useRouter();
-  const id = localStorage.getItem('id');
-  const token = localStorage.getItem('jwt');
+  const cred = JSON.parse(localStorage.getItem('credentials'));
   const [profile, setProfile] = useState([]);
   const [hasAcc, setHasAcc] = useState(false);
 
   const isAuthenticated = async () => {
-    if (!id && !token) {
+    console.log(cred);
+    if (!cred) {
       setHasAcc(false);
     } else {
       await axios
-        .get(`https://home-run.onrender.com/homerun/profile/${id}`, {
+        .get(`https://home-run.onrender.com/homerun/profile/${cred.id}`, {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${cred.token}`,
           },
         })
         .then((res) => {
@@ -38,7 +38,7 @@ const Sidebar = () => {
   };
   useEffect(() => {
     isAuthenticated();
-  }, [token, id]);
+  }, []);
   return (
     <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pl-[60%]'>
       <h1 className='font-bold absolute top-[5%] right-9 z-20'>X</h1>
@@ -79,8 +79,7 @@ const Sidebar = () => {
               className='py-1 px-2 border-[1px] rounded-md text-base font-normal bg-orange-400 text-white'
               onClick={() => {
                 router.push('/auth');
-                localStorage.removeItem('jwt');
-                localStorage.removeItem('id');
+                localStorage.removeItem('credentials');
               }}>
               Log Out
             </button>
