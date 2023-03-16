@@ -79,13 +79,12 @@ const Login = () => {
           )
           .then((res) => {
             setLoading(false);
-            console.log(res);
-            if (res.data.status === 'success') {
+            if (res.status === 200) {
               ///alert('Logged in succesfully');
               router.push('/');
               const data = {
-                token: `${res.data.token}`,
-                id: `${hasAcc ? res.data.newUser.id : res.data.user}`,
+                accessToken: `${res.data.token}`,
+                logId: `${hasAcc ? res.data.newUser.id : res.data.user}`,
               };
               localStorage.setItem('credentials', JSON.stringify(data));
             } else {
@@ -198,7 +197,7 @@ const Login = () => {
             </button>
           </form>
           <p className='underline text-right' onClick={hasExistingAcc}>
-            {hasAcc ? 'Has Account.' : 'No Acc'}
+            {hasAcc ? 'Already have an Account?' : 'No Account?'}
           </p>
         </div>
       </div>

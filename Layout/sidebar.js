@@ -4,40 +4,24 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { BiHomeAlt, BiLibrary, BiArch, BiHardHat } from 'react-icons/bi';
+import isAuthenticated from '@/Library/isAuth';
 
 const Sidebar = () => {
   const router = useRouter();
-  const cred = JSON.parse(localStorage.getItem('credentials'));
   const [profile, setProfile] = useState([]);
   const [hasAcc, setHasAcc] = useState(false);
 
-  const isAuthenticated = async () => {
-    console.log(cred);
-    if (!cred) {
+  const getUser = async () => {
+    const user = await isAuthenticated();
+    if (!user) {
       setHasAcc(false);
-    } else {
-      await axios
-        .get(`https://home-run.onrender.com/homerun/profile/${cred.id}`, {
-          headers: {
-            Authorization: `Bearer ${cred.token}`,
-          },
-        })
-        .then((res) => {
-          console.log(res);
-          if (res.status === 200) {
-            setHasAcc(true);
-            setProfile(res.data.profile);
-          } else {
-            setHasAcc(false);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    } else if (user.status === 200) {
+      setHasAcc(true);
+      setProfile(user.data.profile);
     }
   };
   useEffect(() => {
-    isAuthenticated();
+    getUser();
   }, []);
   return (
     <div className='bg-[#0003] lg:hidden inset-0 z-10 absolute pl-[60%]'>
@@ -70,6 +54,7 @@ const Sidebar = () => {
               alt={'User Profile'}
               height={500}
               width={500}
+              className=''
               onClick={() => {
                 router.push('/profile');
               }}

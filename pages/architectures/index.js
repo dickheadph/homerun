@@ -48,7 +48,7 @@ function Designs(props) {
                     alt={project.name}
                     width={500}
                     height={500}
-                    className='w-[150px] object-fit rounded-t-md'
+                    className='object-fit rounded-t-md'
                   />
                 )}
                 <div className='bg-white rounded-b-md'>

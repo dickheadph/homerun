@@ -1,8 +1,28 @@
-const { useState } = require('react');
+import axios from 'axios';
 
-const isAuthenticated = () => {
-  const token = localStorage.getItem('jwt');
-  return token;
+const isAuthenticated = async () => {
+  const cred = JSON.parse(localStorage.getItem('credentials'));
+  // const router = useRouter();
+  // const [profile, setProfile] = useState([]);
+  // const [hasAcc, setHasAcc] = useState(false);
+
+  if (!cred) {
+    return null;
+  } else {
+    try {
+      const user = await axios.get(
+        `https://home-run.onrender.com/homerun/profile/${cred.logId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cred.accessToken}`,
+          },
+        }
+      );
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 
 export default isAuthenticated;
