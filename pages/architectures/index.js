@@ -24,7 +24,7 @@ function Designs(props) {
       <Head>
         <title>Homerun: Architectures</title>
       </Head>
-      <ul className='flex'>
+      <ul className='flex justify-between'>
         <li>Planning</li>
         <li>Planning</li>
         <li>Planning</li>
